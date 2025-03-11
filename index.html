@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Votación en Línea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Votación en Línea</h1>
+        </header>
+        
+        <main>
+            <section class="voting-section">
+                <h2 class="section-title">¿Cuál consideras el mayor desafío ambiental?</h2>
+                
+                <form id="voting-form">
+                    <div class="option-container">
+                        <label class="radio-option">
+                            <input type="radio" name="vote" value="option1" checked>
+                            Cambio climático
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="vote" value="option2">
+                            Contaminación plástica
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="vote" value="option3">
+                            Deforestación
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="vote" value="option4">
+                            Pérdida de biodiversidad
+                        </label>
+                    </div>
+                    
+                    <button type="button" id="vote-button">Enviar voto</button>
+                    
+                    <div class="voting-confirmation" id="confirmation-message">
+                        ¡Gracias por tu voto! Ha sido registrado correctamente.
+                    </div>
+                </form>
+            </section>
+            
+            <section class="results-section">
+                <h2 class="section-title">Resultados actuales</h2>
+                
+                <div class="results-chart">
+                    <div class="bar-container">
+                        <div class="bar-label">
+                            <span>Cambio climático</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="bar-outer">
+                            <div class="bar-inner option1"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar-container">
+                        <div class="bar-label">
+                            <span>Contaminación plástica</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="bar-outer">
+                            <div class="bar-inner option2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar-container">
+                        <div class="bar-label">
+                            <span>Deforestación</span>
+                            <span>10%</span>
+                        </div>
+                        <div class="bar-outer">
+                            <div class="bar-inner option3"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bar-container">
+                        <div class="bar-label">
+                            <span>Pérdida de biodiversidad</span>
+                            <span>5%</span>
+                        </div>
+                        <div class="bar-outer">
+                            <div class="bar-inner option4"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2025 Sistema de Votación en Línea</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.getElementById('vote-button').addEventListener('click', function() {
+            // Mostrar mensaje de confirmación
+            document.getElementById('confirmation-message').style.display = 'block';
+            
+            // Desactivar el botón para evitar múltiples votos
+            this.disabled = true;
+            this.textContent = 'Voto enviado';
+        });
+    </script>
+</body>
+</html>
